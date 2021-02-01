@@ -9,10 +9,7 @@
 
   color: var(--main-color);
   z-index: 10;
-  // .menu.is-open & {
-  //   color: var(--white-color);
-  //   z-index: 1000;
-  // }
+
   @media screen and(max-width: 1343px) {
     &-light-theme {
       color: var(--white-color);
