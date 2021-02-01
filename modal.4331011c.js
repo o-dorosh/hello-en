@@ -117,83 +117,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
+})({"js/modal.js":[function(require,module,exports) {
+(function () {
+  var refs = {
+    openModalBtn: document.querySelector('[data-modal-open]'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]')
   };
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
+  function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
   }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\images\\feedbacksfooter\\mob\\background@1x.png":[["background@1x.358c5b8c.png","images/feedbacksfooter/mob/background@1x.png"],"images/feedbacksfooter/mob/background@1x.png"],"./..\\images\\feedbacksfooter\\mob\\background@2x.png":[["background@2x.844cab36.png","images/feedbacksfooter/mob/background@2x.png"],"images/feedbacksfooter/mob/background@2x.png"],"./..\\images\\feedbacksfooter\\tablet\\background@1x.png":[["background@1x.54b3fa11.png","images/feedbacksfooter/tablet/background@1x.png"],"images/feedbacksfooter/tablet/background@1x.png"],"./..\\images\\feedbacksfooter\\tablet\\background@2x.png":[["background@2x.826faaa2.png","images/feedbacksfooter/tablet/background@2x.png"],"images/feedbacksfooter/tablet/background@2x.png"],"./..\\images\\feedbacksfooter\\pc\\background@1x.png":[["background@1x.516aba47.png","images/feedbacksfooter/pc/background@1x.png"],"images/feedbacksfooter/pc/background@1x.png"],"./..\\images\\feedbacksfooter\\pc\\background@2x.png":[["background@2x.f53570d6.png","images/feedbacksfooter/pc/background@2x.png"],"images/feedbacksfooter/pc/background@2x.png"],"./..\\images\\instagram.svg":[["instagram.244b4cdf.svg","images/instagram.svg"],"images/instagram.svg"],"./..\\images\\hero\\hero-wave-mobile.png":[["hero-wave-mobile.e0c8c422.png","images/hero/hero-wave-mobile.png"],"images/hero/hero-wave-mobile.png"],"./..\\images\\hero\\hero-bg-desktop.png":[["hero-bg-desktop.c75afc8a.png","images/hero/hero-bg-desktop.png"],"images/hero/hero-bg-desktop.png"],"./..\\images\\hero\\hero-wave-tablet.png":[["hero-wave-tablet.b58c934d.png","images/hero/hero-wave-tablet.png"],"images/hero/hero-wave-tablet.png"],"./..\\images\\hero\\hero-bg-tablet.png":[["hero-bg-tablet.090f434e.png","images/hero/hero-bg-tablet.png"],"images/hero/hero-bg-tablet.png"],"./..\\images\\hero\\hero-wave-desktop.png":[["hero-wave-desktop.b5acde80.png","images/hero/hero-wave-desktop.png"],"images/hero/hero-wave-desktop.png"],"./..\\images\\fire-wesolve.png":[["fire-wesolve.d66dee60.png","images/fire-wesolve.png"],"images/fire-wesolve.png"],"./..\\images\\our-program\\bg-our-program-mobile.png":[["bg-our-program-mobile.ae016e24.png","images/our-program/bg-our-program-mobile.png"],"images/our-program/bg-our-program-mobile.png"],"./..\\images\\our-program\\bg-our-program-tablet.png":[["bg-our-program-tablet.c52bdb42.png","images/our-program/bg-our-program-tablet.png"],"images/our-program/bg-our-program-tablet.png"],"./..\\images\\our-program\\bg-our-program-desktop.png":[["bg-our-program-desktop.56453483.png","images/our-program/bg-our-program-desktop.png"],"images/our-program/bg-our-program-desktop.png"],"./..\\images\\campfire.svg":[["campfire.df7ed37a.svg","images/campfire.svg"],"images/campfire.svg"],"./..\\images\\icon-check.svg":[["icon-check.72789738.svg","images/icon-check.svg"],"images/icon-check.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +335,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/modal.js"], null)
+//# sourceMappingURL=/modal.4331011c.js.map
