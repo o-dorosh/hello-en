@@ -217,6 +217,11 @@
       }
     }
 }
+
+  .footer-name:hover,
+  .footer-name:focus {
+    color: var(--white-color);
+  }
   
   .footer-items {
     padding-top: 30px;
