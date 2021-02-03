@@ -190,19 +190,14 @@ a {
 
   .page-header {
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    left: 0;
+    right: 0;
   }
 
   .navigation-list {
     list-style: none;
     margin-bottom: 50px;
+    align-self: auto;
   }
 
   .nav-link {
@@ -318,7 +313,7 @@ a {
 
   .navigation-list {
     display: flex;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .nav-link {
@@ -1695,6 +1690,7 @@ li {
 }
 
 .why-we-choose-set-item:not(:last-child) {
+  padding-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -1861,19 +1857,16 @@ li {
 }
 .teacher {
   padding-top: 300px;
-  padding-bottom: 40px;
 }
 @media screen and (min-width: 768px) {
   .teacher {
     display: flex;
     padding-top: 302px;
-    padding-bottom: 50px;
   }
 }
 @media screen and (min-width: 1344px) {
   .teacher {
     padding-top: 330px;
-    padding-bottom: 130px;
   }
 }
 
