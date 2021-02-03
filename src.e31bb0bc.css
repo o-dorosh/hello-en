@@ -202,6 +202,7 @@ a {
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .navigation-list {
     max-width: 320px;
+    padding-left: 30px;
     margin-left: auto;
     margin-right: auto;
   }
