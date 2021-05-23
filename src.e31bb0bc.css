@@ -197,20 +197,30 @@ a {
   .navigation-list {
     list-style: none;
     margin-bottom: 50px;
-    align-self: auto;
   }
-
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .navigation-list {
+    max-width: 320px;
+    padding-left: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 320px) {
   .nav-link {
     color: var(--white-color);
   }
   .nav-link:hover, .nav-link:focus {
     color: var(--orange-color);
   }
-
+}
+@media screen and (min-width: 320px) {
   .button-call {
     display: none;
   }
-
+}
+@media screen and (min-width: 320px) {
   .button-call-menu {
     display: flex;
     justify-content: center;
@@ -229,7 +239,8 @@ a {
     border: 2px solid #ff6b09;
     box-sizing: border-box;
   }
-
+}
+@media screen and (min-width: 320px) {
   .reverse {
     display: flex;
   }
@@ -709,6 +720,10 @@ a {
 }
 .hero-text-accent {
   color: var(--orange-color);
+}
+
+.page-hero {
+  overflow: hidden;
 }
 
 .hero-text-wrapper {
@@ -1606,6 +1621,7 @@ li {
   .our-program {
     padding-top: 120px;
     padding-bottom: 325px;
+    overflow: hidden;
   }
 
   .our-program-title {
@@ -1615,8 +1631,10 @@ li {
   .our-program-list {
     display: flex;
     margin-left: 0;
+    overflow: hidden;
   }
   .our-program-list::before {
+    overflow: hidden;
     left: 0;
     top: 140px;
     width: 1684px;
@@ -1690,7 +1708,6 @@ li {
 }
 
 .why-we-choose-set-item:not(:last-child) {
-  padding-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -1856,12 +1873,12 @@ li {
   }
 }
 .teacher {
-  padding-top: 300px;
+  padding-top: 270px;
 }
 @media screen and (min-width: 768px) {
   .teacher {
     display: flex;
-    padding-top: 302px;
+    padding-top: 300px;
   }
 }
 @media screen and (min-width: 1344px) {
@@ -1904,16 +1921,10 @@ li {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--grey-color);
 }
-@media screen and (min-width: 768px) {
-  .teacher-name {
-    margin-top: 112px;
-  }
-}
 @media screen and (min-width: 1344px) {
   .teacher-name {
     font-size: 30px;
     line-height: 37px;
-    margin-top: 237px;
     padding-bottom: 15px;
   }
 }
