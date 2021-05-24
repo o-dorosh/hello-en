@@ -31,10 +31,6 @@ body {
   color: var(--main-color);
 }
 
-section {
-  overflow: hidden;
-}
-
 .list {
   list-style: none;
 }
@@ -684,6 +680,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .page-hero {
@@ -1633,7 +1630,8 @@ li {
   .our-program-list::before {
     left: 0;
     top: 140px;
-    width: 1684px;
+    /*  width: 1684px; */
+    width: 1344px;
     height: 1px;
   }
 
@@ -1701,6 +1699,7 @@ li {
   box-shadow: -5px 8px 26px rgba(0, 0, 0, 0.04);
   height: 638px;
   margin-bottom: 39px;
+  z-index: 100;
 }
 
 .why-we-choose-set-item:not(:last-child) {
