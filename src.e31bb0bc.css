@@ -31,6 +31,10 @@ body {
   color: var(--main-color);
 }
 
+section {
+  overflow: hidden;
+}
+
 .list {
   list-style: none;
 }
@@ -720,10 +724,6 @@ a {
 }
 .hero-text-accent {
   color: var(--orange-color);
-}
-
-.page-hero {
-  overflow: hidden;
 }
 
 .hero-text-wrapper {
@@ -1544,7 +1544,6 @@ li {
   background-size: cover;
   height: 136px;
   width: 176px;
-  overflow: hidden;
 }
 
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 320px) and (max-width: 767px), screen and (min-resolution: 192dpi) and (min-width: 320px) and (max-width: 767px), screen and (min-resolution: 2dppx) and (min-width: 320px) and (max-width: 767px) {
@@ -1621,7 +1620,6 @@ li {
   .our-program {
     padding-top: 120px;
     padding-bottom: 325px;
-    overflow: hidden;
   }
 
   .our-program-title {
@@ -1631,10 +1629,8 @@ li {
   .our-program-list {
     display: flex;
     margin-left: 0;
-    overflow: hidden;
   }
   .our-program-list::before {
-    overflow: hidden;
     left: 0;
     top: 140px;
     width: 1684px;
